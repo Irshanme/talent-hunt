@@ -6,20 +6,20 @@
 // 1. OFFLINE DATASET FALLBACK
 // --------------------------------------------------------------------------
 const FALLBACK_STUDENTS_DATA = [
-  {
+ {
     "rank": 1,
-    "name": "Aarav Sharma",
-    "hallTicketId": "TH2026A101",
-    "certificateId": "CERT-2026-8891",
-    "institution": "Delhi Public School, R.K. Puram",
-    "aptiScore": 99,
-    "verbalScore": 98,
-    "codingScore": 100,
-    "totalScore": 297,
-    "percentage": "99.0%",
-    "status": "Qualified with Honors",
-    "badge": "National Champion",
-    "category": "General"
+    "name": "DEEPA DEVADIG",
+    "hallTicketId": "pymay075",
+    "certificateId": "PYSP-BTM-TH26-075",
+    "institution": "La Martiniere for Boys, Kolkata",
+    "aptiScore": 11,
+    "verbalScore": 13,
+    "codingScore": 3,
+    "totalScore": 27,
+    "percentage": "54%",
+    "status": "Qualified",
+    "badge": "High Achiever",
+    "category": "OBC"
   },
   {
     "rank": 2,
