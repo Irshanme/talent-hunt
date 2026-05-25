@@ -5,308 +5,7 @@
 // --------------------------------------------------------------------------
 // 1. OFFLINE DATASET FALLBACK
 // --------------------------------------------------------------------------
-const FALLBACK_STUDENTS_DATA = [
- {
-    "rank": 1,
-    "name": "DEEPA DEVADIG",
-    "hallTicketId": "pymay075",
-    "certificateId": "PYSP-BTM-TH26-075",
-    "institution": "La Martiniere for Boys, Kolkata",
-    "aptiScore": 11,
-    "verbalScore": 13,
-    "codingScore": 3,
-    "totalScore": 27,
-    "percentage": "54%",
-    "status": "Qualified",
-    "badge": "High Achiever",
-    "category": "OBC"
-  },
-  {
-    "rank": 2,
-    "name": "Diya Patel",
-    "hallTicketId": "TH2026A102",
-    "certificateId": "CERT-2026-8892",
-    "institution": "Dhirubhai Ambani International School, Mumbai",
-    "aptiScore": 98,
-    "verbalScore": 100,
-    "codingScore": 98,
-    "totalScore": 296,
-    "percentage": "98.7%",
-    "status": "Qualified with Honors",
-    "badge": "Elite Master",
-    "category": "General"
-  },
-  {
-    "rank": 3,
-    "name": "Arjun Nair",
-    "hallTicketId": "TH2026A103",
-    "certificateId": "CERT-2026-8893",
-    "institution": "National Public School, Bangalore",
-    "aptiScore": 100,
-    "verbalScore": 95,
-    "codingScore": 99,
-    "totalScore": 294,
-    "percentage": "98.0%",
-    "status": "Qualified with Honors",
-    "badge": "Elite Master",
-    "category": "General"
-  },
-  {
-    "rank": 4,
-    "name": "Ananya Rao",
-    "hallTicketId": "TH2026A104",
-    "certificateId": "CERT-2026-8894",
-    "institution": "The Heritage School, Gurgaon",
-    "aptiScore": 96,
-    "verbalScore": 98,
-    "codingScore": 97,
-    "totalScore": 291,
-    "percentage": "97.0%",
-    "status": "Qualified",
-    "badge": "High Achiever",
-    "category": "General"
-  },
-  {
-    "rank": 5,
-    "name": "Kabir Mehta",
-    "hallTicketId": "TH2026A105",
-    "certificateId": "CERT-2026-8895",
-    "institution": "Cathedral & John Connon School, Mumbai",
-    "aptiScore": 95,
-    "verbalScore": 97,
-    "codingScore": 98,
-    "totalScore": 290,
-    "percentage": "96.7%",
-    "status": "Qualified",
-    "badge": "High Achiever",
-    "category": "General"
-  },
-  {
-    "rank": 6,
-    "name": "Ishaan Sen",
-    "hallTicketId": "TH2026A106",
-    "certificateId": "CERT-2026-8896",
-    "institution": "La Martiniere for Boys, Kolkata",
-    "aptiScore": 97,
-    "verbalScore": 93,
-    "codingScore": 99,
-    "totalScore": 289,
-    "percentage": "96.3%",
-    "status": "Qualified",
-    "badge": "High Achiever",
-    "category": "OBC"
-  },
-  {
-    "rank": 7,
-    "name": "Meera Iyer",
-    "hallTicketId": "TH2026A107",
-    "certificateId": "CERT-2026-8897",
-    "institution": "Padma Seshadri Bala Bhavan, Chennai",
-    "aptiScore": 94,
-    "verbalScore": 99,
-    "codingScore": 95,
-    "totalScore": 288,
-    "percentage": "96.0%",
-    "status": "Qualified",
-    "badge": "High Achiever",
-    "category": "General"
-  },
-  {
-    "rank": 8,
-    "name": "Rohan Gupta",
-    "hallTicketId": "TH2026A108",
-    "certificateId": "CERT-2026-8898",
-    "institution": "Modern School, Barakhamba Road, Delhi",
-    "aptiScore": 98,
-    "verbalScore": 92,
-    "codingScore": 97,
-    "totalScore": 287,
-    "percentage": "95.7%",
-    "status": "Qualified",
-    "badge": "Achiever",
-    "category": "General"
-  },
-  {
-    "rank": 9,
-    "name": "Zara Khan",
-    "hallTicketId": "TH2026A109",
-    "certificateId": "CERT-2026-8899",
-    "institution": "St. Mary's School, Pune",
-    "aptiScore": 93,
-    "verbalScore": 96,
-    "codingScore": 96,
-    "totalScore": 285,
-    "percentage": "95.0%",
-    "status": "Qualified",
-    "badge": "Achiever",
-    "category": "OBC"
-  },
-  {
-    "rank": 10,
-    "name": "Aditya Verma",
-    "hallTicketId": "TH2026A110",
-    "certificateId": "CERT-2026-8900",
-    "institution": "Dav Public School, Hyderabad",
-    "aptiScore": 96,
-    "verbalScore": 90,
-    "codingScore": 98,
-    "totalScore": 284,
-    "percentage": "94.7%",
-    "status": "Qualified",
-    "badge": "Achiever",
-    "category": "SC"
-  },
-  {
-    "rank": 11,
-    "name": "Sneha Reddy",
-    "hallTicketId": "TH2026A111",
-    "certificateId": "CERT-2026-8901",
-    "institution": "Chirec International School, Hyderabad",
-    "aptiScore": 92,
-    "verbalScore": 95,
-    "codingScore": 95,
-    "totalScore": 282,
-    "percentage": "94.0%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "General"
-  },
-  {
-    "rank": 12,
-    "name": "Devansh Joshi",
-    "hallTicketId": "TH2026A112",
-    "certificateId": "CERT-2026-8902",
-    "institution": "Sanskaar Valley School, Bhopal",
-    "aptiScore": 95,
-    "verbalScore": 91,
-    "codingScore": 94,
-    "totalScore": 280,
-    "percentage": "93.3%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "General"
-  },
-  {
-    "rank": 13,
-    "name": "Kriti Malhotra",
-    "hallTicketId": "TH2026A113",
-    "certificateId": "CERT-2026-8903",
-    "institution": "Vasant Valley School, Delhi",
-    "aptiScore": 91,
-    "verbalScore": 94,
-    "codingScore": 93,
-    "totalScore": 278,
-    "percentage": "92.7%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "General"
-  },
-  {
-    "rank": 14,
-    "name": "Nikhil Deshmukh",
-    "hallTicketId": "TH2026A114",
-    "certificateId": "CERT-2026-8904",
-    "institution": "Bishop's School, Pune",
-    "aptiScore": 94,
-    "verbalScore": 89,
-    "codingScore": 94,
-    "totalScore": 277,
-    "percentage": "92.3%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "OBC"
-  },
-  {
-    "rank": 15,
-    "name": "Priyanka Das",
-    "hallTicketId": "TH2026A115",
-    "certificateId": "CERT-2026-8905",
-    "institution": "Sai International School, Bhubaneswar",
-    "aptiScore": 90,
-    "verbalScore": 93,
-    "codingScore": 92,
-    "totalScore": 275,
-    "percentage": "91.7%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "SC"
-  },
-  {
-    "rank": 16,
-    "name": "Siddharth Bose",
-    "hallTicketId": "TH2026A116",
-    "certificateId": "CERT-2026-8906",
-    "institution": "South Point High School, Kolkata",
-    "aptiScore": 93,
-    "verbalScore": 88,
-    "codingScore": 93,
-    "totalScore": 274,
-    "percentage": "91.3%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "General"
-  },
-  {
-    "rank": 17,
-    "name": "Tanvi Bhatia",
-    "hallTicketId": "TH2026A117",
-    "certificateId": "CERT-2026-8907",
-    "institution": "St. Xavier's High School, Ahmedabad",
-    "aptiScore": 89,
-    "verbalScore": 92,
-    "codingScore": 91,
-    "totalScore": 272,
-    "percentage": "90.7%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "General"
-  },
-  {
-    "rank": 18,
-    "name": "Yash Vardhan",
-    "hallTicketId": "TH2026A118",
-    "certificateId": "CERT-2026-8908",
-    "institution": "Patna Central School, Patna",
-    "aptiScore": 92,
-    "verbalScore": 86,
-    "codingScore": 92,
-    "totalScore": 270,
-    "percentage": "90.0%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "ST"
-  },
-  {
-    "rank": 19,
-    "name": "Riya Singhal",
-    "hallTicketId": "TH2026A119",
-    "certificateId": "CERT-2026-8909",
-    "institution": "Sarla Birla Academy, Bangalore",
-    "aptiScore": 88,
-    "verbalScore": 90,
-    "codingScore": 90,
-    "totalScore": 268,
-    "percentage": "89.3%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "General"
-  },
-  {
-    "rank": 20,
-    "name": "Vikram Sethi",
-    "hallTicketId": "TH2026A120",
-    "certificateId": "CERT-2026-8910",
-    "institution": "St. Columba's School, Delhi",
-    "aptiScore": 87,
-    "verbalScore": 89,
-    "codingScore": 91,
-    "totalScore": 267,
-    "percentage": "89.0%",
-    "status": "Qualified",
-    "badge": "Emerging Talent",
-    "category": "General"
-  }
-];
+// Fallback removed to enforce strictly dynamic loading from students.json.
 
 // Global dataset pointer
 let students = [];
@@ -314,6 +13,67 @@ let students = [];
 // Helper to get initials
 function getInitials(name) {
   return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+}
+
+// Dynamically compute totalScore, percentage, rank, status, and badge based on raw subject scores
+function processStudentData(data) {
+  return data.map((student, originalIndex) => {
+    const totalScore = parseInt(student.aptiScore || 0, 10) + 
+                       parseInt(student.verbalScore || 0, 10) + 
+                       parseInt(student.codingScore || 0, 10);
+                       
+    const isMax50 = (student.aptiScore <= 20 && student.verbalScore <= 20 && student.codingScore <= 10);
+    const maxTotal = isMax50 ? 50 : 300;
+    const percentage = ((totalScore / maxTotal) * 100).toFixed(1) + '%';
+    const percentVal = totalScore / maxTotal;
+
+    return {
+      ...student,
+      totalScore,
+      percentage,
+      percentVal,
+      originalIndex
+    };
+  })
+  .sort((a, b) => {
+    // Primary sort: percentVal descending
+    if (b.percentVal !== a.percentVal) {
+      return b.percentVal - a.percentVal;
+    }
+    // Secondary sort: preserve the exact sequential order in students.json
+    return a.originalIndex - b.originalIndex;
+  })
+  .map((student, index) => {
+    const rank = index + 1;
+    
+    // Assign badge dynamically based on rank
+    let badge = "Emerging Talent";
+    if (rank === 1) {
+      badge = "National Champion";
+    } else if (rank <= 3) {
+      badge = "Elite Master";
+    } else if (rank <= 10) {
+      badge = "High Achiever";
+    }
+
+    // Assign status dynamically based on rank (exactly the top 10 qualify!)
+    let status = "Not Qualified";
+    if (rank <= 3) {
+      status = "Qualified with Honors";
+    } else if (rank <= 10) {
+      status = "Qualified";
+    }
+
+    // Strip originalIndex so it's not present in the final dataset
+    const { originalIndex, ...studentClean } = student;
+
+    return {
+      ...studentClean,
+      rank,
+      badge,
+      status
+    };
+  });
 }
 
 // --------------------------------------------------------------------------
@@ -326,12 +86,69 @@ async function initializePortal() {
     if (!response.ok) {
       throw new Error(`HTTP status error: ${response.status}`);
     }
-    students = await response.json();
+    const rawData = await response.json();
+    students = processStudentData(rawData);
     console.log('Successfully loaded student roster from students.json.');
   } catch (error) {
-    // Elegant fallback (safeguard for local file:// double-click execution)
-    console.warn('Network fetch of students.json failed (CORS/Offline). Loading premium local data array fallback.', error);
-    students = FALLBACK_STUDENTS_DATA;
+    console.warn('Could not fetch students.json (likely due to CORS or local file mode). Checking fallback...', error);
+    
+    // Check if studentsData exists globally (loaded via students-data.js)
+    if (typeof studentsData !== 'undefined' && Array.isArray(studentsData)) {
+      students = processStudentData(studentsData);
+      console.log('Successfully loaded student roster from static students-data.js fallback.');
+    } else {
+      console.error('Failed to load student roster from students.json and no static fallback found.', error);
+      const podiumMount = document.getElementById('podium-mount');
+      if (podiumMount) {
+        podiumMount.innerHTML = `
+          <div class="glass-card" style="grid-column: span 3; text-align: center; padding: 40px 24px; border: 1px dashed rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.05); border-radius: 16px;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; color: #EF4444; margin-bottom: 8px;">Database Access Blocked (CORS)</h3>
+            <p style="font-size: 0.9rem; max-width: 500px; margin: 0 auto 16px; line-height: 1.5; color: var(--slate);">
+              Browsers restrict local database access under file://. To view candidate rankings, please run a local web server (e.g. <code>npx serve</code> in the folder) and view the site over HTTP.
+            </p>
+            <div style="font-size: 0.8rem; color: var(--slate);">Error reference: ${error.message}</div>
+          </div>
+        `;
+      }
+      const leaderboardMount = document.getElementById('leaderboard-mount');
+      if (leaderboardMount) {
+        leaderboardMount.innerHTML = '';
+      }
+      const excellenceMount = document.getElementById('excellence-mount');
+      if (excellenceMount) {
+        excellenceMount.innerHTML = '';
+      }
+      // scroll reveal / animations must run so that default sections and the CORS message are visible!
+      setupDynamicInteractions();
+      return;
+    }
+  }
+
+  // Dynamically set stats targets based on loaded database
+  const highestScore = Math.max(...students.map(s => s.totalScore));
+  const highestScoreEl = document.getElementById('stat-score');
+  if (highestScoreEl) {
+    highestScoreEl.setAttribute('data-target', highestScore);
+  }
+
+  // Update Total Participants to the actual number of students in students.json!
+  const participantsCount = students.length;
+  const participantsEl = document.getElementById('stat-participants');
+  if (participantsEl) {
+    participantsEl.setAttribute('data-target', participantsCount);
+  }
+
+  // Count qualified students dynamically based on status (which is exactly 10!)
+  const qualifiedCount = students.filter(s => s.status.startsWith('Qualified')).length;
+
+  const qualifiedEl = document.getElementById('stat-qualified');
+  if (qualifiedEl) {
+    qualifiedEl.setAttribute('data-target', qualifiedCount);
+  }
+
+  const certsEl = document.getElementById('stat-certs');
+  if (certsEl) {
+    certsEl.setAttribute('data-target', participantsCount);
   }
 
   // Render all dependent components once data is mounted
@@ -351,11 +168,14 @@ function renderHeroShowcase() {
   const topper = students.find(s => s.rank === 1);
   if (!topper) return;
 
+  const isM50 = (topper.aptiScore <= 20 && topper.verbalScore <= 20 && topper.codingScore <= 10);
+  const maxT = isM50 ? 50 : 300;
+
   document.getElementById('hero-ranker-badge').innerText = `AIR Rank ${topper.rank}`;
   document.getElementById('hero-ranker-avatar').innerText = getInitials(topper.name);
   document.getElementById('hero-ranker-name').innerText = topper.name;
   document.getElementById('hero-ranker-school').innerText = topper.institution;
-  document.getElementById('hero-ranker-score').innerText = `${topper.totalScore} / 300`;
+  document.getElementById('hero-ranker-score').innerText = `${topper.totalScore} / ${maxT}`;
   document.getElementById('hero-ranker-cert').innerText = topper.certificateId;
 }
 
@@ -370,6 +190,10 @@ function renderPodiums() {
 
   if (!topper1 || !topper2 || !topper3) return;
 
+  const p1Max = (topper1.aptiScore <= 20 && topper1.verbalScore <= 20 && topper1.codingScore <= 10) ? 50 : 300;
+  const p2Max = (topper2.aptiScore <= 20 && topper2.verbalScore <= 20 && topper2.codingScore <= 10) ? 50 : 300;
+  const p3Max = (topper3.aptiScore <= 20 && topper3.verbalScore <= 20 && topper3.codingScore <= 10) ? 50 : 300;
+
   mount.innerHTML = `
     <!-- Rank 2 Podium -->
     <div class="podium-card glass-card podium-2nd spotlight-card reveal-on-scroll">
@@ -377,7 +201,7 @@ function renderPodiums() {
       <div class="podium-avatar">${getInitials(topper2.name)}</div>
       <h3 class="podium-name">${topper2.name}</h3>
       <p class="podium-school">${topper2.institution}</p>
-      <div class="podium-score-pill">${topper2.totalScore} / 300</div>
+      <div class="podium-score-pill">${topper2.totalScore} / ${p2Max}</div>
       <span class="podium-ticket">${topper2.hallTicketId}</span>
     </div>
 
@@ -390,7 +214,7 @@ function renderPodiums() {
       <div class="podium-avatar">${getInitials(topper1.name)}</div>
       <h3 class="podium-name">${topper1.name}</h3>
       <p class="podium-school">${topper1.institution}</p>
-      <div class="podium-score-pill">${topper1.totalScore} / 300</div>
+      <div class="podium-score-pill">${topper1.totalScore} / ${p1Max}</div>
       <span class="podium-ticket">${topper1.hallTicketId}</span>
     </div>
 
@@ -400,7 +224,7 @@ function renderPodiums() {
       <div class="podium-avatar">${getInitials(topper3.name)}</div>
       <h3 class="podium-name">${topper3.name}</h3>
       <p class="podium-school">${topper3.institution}</p>
-      <div class="podium-score-pill">${topper3.totalScore} / 300</div>
+      <div class="podium-score-pill">${topper3.totalScore} / ${p3Max}</div>
       <span class="podium-ticket">${topper3.hallTicketId}</span>
     </div>
   `;
@@ -415,13 +239,19 @@ function renderLeaderboardList() {
   let html = '';
 
   middleTier.forEach(student => {
+    const isM50 = (student.aptiScore <= 20 && student.verbalScore <= 20 && student.codingScore <= 10);
+    const maxT = isM50 ? 50 : 300;
+    const maxA = isM50 ? 20 : 100;
+    const maxV = isM50 ? 20 : 100;
+    const maxC = isM50 ? 10 : 100;
+
     html += `
       <div class="leaderboard-row glass-card spotlight-card" role="listitem">
         <span class="row-rank row-rank-highlight">#${student.rank}</span>
         <div class="row-avatar">${getInitials(student.name)}</div>
         <div class="row-name">${student.name}</div>
         <div class="row-school">${student.institution}</div>
-        <div class="row-score">${student.totalScore} / 300</div>
+        <div class="row-score">${student.totalScore} / ${maxT}</div>
         <button class="row-action-btn" aria-label="Expand score details for ${student.name}" data-ticket="${student.hallTicketId}">
           <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
         </button>
@@ -431,15 +261,15 @@ function renderLeaderboardList() {
         <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); border-top:none; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; padding: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
           <div>
             <div style="font-size:0.75rem; color: var(--slate); text-transform:uppercase; letter-spacing:0.05em;">Aptitude Score</div>
-            <div style="font-family: var(--font-heading); font-size:1.35rem; font-weight:700; color:var(--accent); margin-top:4px;">${student.aptiScore} <span style="font-size:0.8rem; color:var(--slate)">/ 100</span></div>
+            <div style="font-family: var(--font-heading); font-size:1.35rem; font-weight:700; color:var(--accent); margin-top:4px;">${student.aptiScore} <span style="font-size:0.8rem; color:var(--slate)">/ ${maxA}</span></div>
           </div>
           <div>
             <div style="font-size:0.75rem; color: var(--slate); text-transform:uppercase; letter-spacing:0.05em;">Verbal Score</div>
-            <div style="font-family: var(--font-heading); font-size:1.35rem; font-weight:700; color:var(--highlight); margin-top:4px;">${student.verbalScore} <span style="font-size:0.8rem; color:var(--slate)">/ 100</span></div>
+            <div style="font-family: var(--font-heading); font-size:1.35rem; font-weight:700; color:var(--highlight); margin-top:4px;">${student.verbalScore} <span style="font-size:0.8rem; color:var(--slate)">/ ${maxV}</span></div>
           </div>
           <div>
             <div style="font-size:0.75rem; color: var(--slate); text-transform:uppercase; letter-spacing:0.05em;">Coding Score</div>
-            <div style="font-family: var(--font-heading); font-size:1.35rem; font-weight:700; color:#10B981; margin-top:4px;">${student.codingScore} <span style="font-size:0.8rem; color:var(--slate)">/ 100</span></div>
+            <div style="font-family: var(--font-heading); font-size:1.35rem; font-weight:700; color:#10B981; margin-top:4px;">${student.codingScore} <span style="font-size:0.8rem; color:var(--slate)">/ ${maxC}</span></div>
           </div>
         </div>
       </div>
@@ -657,13 +487,19 @@ function renderSearchErrorState(query) {
 
 // Success State Rendering (The High-Fidelity Credential Dossier)
 function renderSearchSuccessCard(student) {
+  const isM50 = (student.aptiScore <= 20 && student.verbalScore <= 20 && student.codingScore <= 10);
+  const maxT = isM50 ? 50 : 300;
+  const maxA = isM50 ? 20 : 100;
+  const maxV = isM50 ? 20 : 100;
+  const maxC = isM50 ? 10 : 100;
+
   // Calculate raw percentages for gauges
-  const aptiPercent = student.aptiScore;
-  const verbalPercent = student.verbalScore;
-  const codingPercent = student.codingScore;
+  const aptiPercent = Math.round((student.aptiScore / maxA) * 100);
+  const verbalPercent = Math.round((student.verbalScore / maxV) * 100);
+  const codingPercent = Math.round((student.codingScore / maxC) * 100);
   
   // Calculate average percentage
-  const avgPercentVal = Math.round((student.totalScore / 300) * 100);
+  const avgPercentVal = Math.round((student.totalScore / maxT) * 100);
 
   resultsMount.innerHTML = `
     <div class="result-success-card glass-card spotlight-card">
@@ -724,7 +560,7 @@ function renderSearchSuccessCard(student) {
           
           <div class="circular-label">
             <span class="circular-label-title">Consolidated Merit</span>
-            <span class="circular-label-val">${student.totalScore} / 300</span>
+            <span class="circular-label-val">${student.totalScore} / ${maxT}</span>
             <span class="circular-label-desc">Cumulative merit score in top national academic standard thresholds.</span>
           </div>
         </div>
@@ -736,7 +572,7 @@ function renderSearchSuccessCard(student) {
             <div class="score-bar-item">
               <div class="score-bar-header">
                 <span>Aptitude Competence</span>
-                <span><strong>${student.aptiScore}</strong> / 100</span>
+                <span><strong>${student.aptiScore}</strong> / ${maxA}</span>
               </div>
               <div class="progress-track" aria-hidden="true">
                 <div class="progress-bar-fill fill-apti" id="bar-fill-apti" style="width: 0%;"></div>
@@ -747,7 +583,7 @@ function renderSearchSuccessCard(student) {
             <div class="score-bar-item">
               <div class="score-bar-header">
                 <span>Verbal Reasoning</span>
-                <span><strong>${student.verbalScore}</strong> / 100</span>
+                <span><strong>${student.verbalScore}</strong> / ${maxV}</span>
               </div>
               <div class="progress-track" aria-hidden="true">
                 <div class="progress-bar-fill fill-verbal" id="bar-fill-verbal" style="width: 0%;"></div>
@@ -758,7 +594,7 @@ function renderSearchSuccessCard(student) {
             <div class="score-bar-item">
               <div class="score-bar-header">
                 <span>Coding Analytics</span>
-                <span><strong>${student.codingScore}</strong> / 100</span>
+                <span><strong>${student.codingScore}</strong> / ${maxC}</span>
               </div>
               <div class="progress-track" aria-hidden="true">
                 <div class="progress-bar-fill fill-coding" id="bar-fill-coding" style="width: 0%;"></div>
@@ -833,6 +669,10 @@ window.addEventListener('scroll', () => {
 // --------------------------------------------------------------------------
 // 7. BOOTSTRAP INITIALIZATION
 // --------------------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    initializePortal();
+  });
+} else {
   initializePortal();
-});
+}
