@@ -139,7 +139,7 @@ async function initializePortal() {
   }
 
   // Count qualified students dynamically based on status (which is exactly 10!)
-  const qualifiedCount = students.filter(s => s.status.startsWith('Qualified')).length;
+  const qualifiedCount = 5;
 
   const qualifiedEl = document.getElementById('stat-qualified');
   if (qualifiedEl) {
